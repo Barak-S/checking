@@ -1,12 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import LoggedOutView from './containers/loggedOutView';
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+  // const [error,setError] = useState(null)
+
+  const AppContent = useMemo(() => {
+    if (loggedIn){
+      return(<Text>logged in</Text>)
+    } else {
+      return(<LoggedOutView/>)
+    }
+  });
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {AppContent}
     </View>
   );
 }
@@ -14,8 +24,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
