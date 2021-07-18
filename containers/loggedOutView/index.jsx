@@ -7,17 +7,17 @@ import CreateAccount from './CreateAccount'
 
 const LoggedOutContainer = createStackNavigator({
     Login: { screen: Login, navigationOptions: () => ({
-        title: `Log In`,
+        title: `Voyager`,
         headerStyle: {
-            backgroundColor: `${colors.green}`,
+            backgroundColor: `${colors.purple}`,
           },
         headerTitleStyle: { color: `${colors.white}`, fontSize: 21 },
         
     }), },
     CreateAccount:{screen: CreateAccount, navigationOptions: () => ({
-        title: `Create Account`,
+        title: `Voyager`,
         headerStyle: {
-            backgroundColor: `${colors.green}`,
+            backgroundColor: `${colors.purple}`,
           },
         headerTitleStyle: { color: `${colors.white}`, fontSize: 21 },
         headerBackTitleStyle: { color: `${colors.white}`, fontSize: 19 },

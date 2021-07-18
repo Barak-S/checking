@@ -1,32 +1,44 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 import { colors } from '../../styles/colors';
+import TextInput from '../../components/Input';
+
 
 const CreateAccount = ({ navigation}) => {
 
     return(
         
         <View style={styles.container}>
-            <Text style={{fontSize: 30, paddingTop: 85, marginBottom:30, fontWeight: '600', color: `${colors.white}`}}>Create Account</Text>
-            {/* <Text style={{fontSize: 22, color: '#ff414e', marginBottom: 10}}>{this.props.screenProps.error !== ''? 'username already exists':null}</Text> */}
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontSize: 27, textAlign: 'center', paddingTop: 55, fontWeight: '600', color: `${colors.blue}`}}>Sign Up</Text>
+          </View>
+          <View style={{ flex: 4 }}>
             <TextInput
-                style={{fontSize: 20, padding: 12, width: '55%', backgroundColor: `${colors.white}`, borderRadius: 10, marginBottom: 35}}
-                // onChangeText={(text)=> this.props.screenProps.handleUsername(text)} placeholder="Username" autoCapitalize = 'none'
+              label="First Name" 
             />
             <TextInput
-                style={{fontSize: 20, padding: 12, width: '55%', backgroundColor: `${colors.white}`, borderRadius: 10, marginBottom: 20}}
-                // onChangeText={(text)=> this.props.screenProps.handlePassword(text)} placeholder="Password" secureTextEntry={true}
+              label="Last Name" 
             />
             <TextInput
-                style={{fontSize: 20, padding: 12, width: '55%', backgroundColor: `${colors.white}`, borderRadius: 10, marginBottom: 12}}
-                // onChangeText={(text)=> this.props.screenProps.handlePassword(text)} placeholder="Confirm Password" secureTextEntry={true}
+              label="Email" 
             />
+            <TextInput
+              label="Password" 
+              secureTextEntry={true}
+            />
+            <TextInput
+              label="Confirm Password" 
+              secureTextEntry={true}
+            />
+          </View>
+          <View style={{ flex: 2 }}>
             <TouchableHighlight 
-                style={styles.login} 
-                // onPress={()=>this.props.screenProps.handleCreateAccountSubmit()}
+              style={styles.login} 
+              // onPress={()=>this.props.screenProps.handleLoginSubmit()}
             >
-                <Text style={{textAlign: "center", fontSize: 19, fontWeight:'700', color: `${colors.white}`}}>Create Account</Text>
+              <Text style={{textAlign: "center", fontSize: 19, fontWeight:'700', color: `${colors.white}`}}>Create Account</Text>
             </TouchableHighlight>
+          </View>
         </View>
     )
 }
@@ -34,30 +46,15 @@ const CreateAccount = ({ navigation}) => {
 const styles= StyleSheet.create({
     container:{
       flex: 1,
-      backgroundColor: `${colors.black}`,
-      alignItems: "center",
-      justifyContent: 'flex-start',
-      paddingTop: 24
-    },
-    searchBox:{
-      fontSize: 21,
-      padding: 20,
-      width: '92%',
       backgroundColor: `${colors.white}`,
-      borderRadius: 15,
+      paddingLeft: 12.5,
+      paddingRight: 12.5,
     },
-    results: {
-      flex: 1,
-    },
-    popup: {
-      padding: 50,
-      backgroundColor: '#333',
-      flex:1,
-    },
+
     login:{
         padding: 13,
         margin: 30,
-        backgroundColor: `${colors.green}`,
+        backgroundColor: `${colors.blue}`,
         borderRadius: 10,
     }
 
